@@ -9,7 +9,7 @@ Methods
 Implemented methods are the same that arduino library
 
 * **attach(pin)**
-  The pin number is a string according to beaglebone users. At the moment only there are only two PWD pins available: P9_14 and P9_16
+  The pin number is a string according to beaglebone users. At the moment there are only two PWD pins available: P9_14 and P9_16
 
 * **write(angle)**
   Angle of ration in degrees (from 0 to 180). This angle is converted to microseconds according to the standard but you can change it easily to
