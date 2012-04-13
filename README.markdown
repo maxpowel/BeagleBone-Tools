@@ -8,25 +8,25 @@ Methods
 =========
 Implemented methods are the same that arduino library
 
-* attach(pin)
+* **attach(pin)**
   The pin number is a string according to beaglebone users. At the moment only there are only two PWD pins available: P9_14 and P9_16
 
-* write(angle)
+* **write(angle)**
   Angle of ration in degrees (from 0 to 180). This angle is converted to microseconds according to the standard but you can change it easily to
   adjust to your servos (just change MIN_DUTY_NS and MAX_DUTY_NS variables in the class servo, this variables contains time in nanoseconds)
 
-* writeMicroseconds(microseconds)
+* **writeMicroseconds(microseconds)**
   Pulse width in microseconds. By default the duty frecuency used is 50Hz (pulse time of 20000 microseconds). The standard says that the range
   of our pulses should go from 500 to 2000 microseconds but not all manufacturers comply with this standard. The pulse range is usually from 700 to 2300 microseconds
   but with this function you can find the exact value for your servo
 
-* read
+* **read**
   The last value used with write
 
-* attached
+* **attached**
   Get if the servo is attached to some pin
 
-* detach
+* **detach**
   Free the pin (in beablebone its not required to free the pin)
   
 
