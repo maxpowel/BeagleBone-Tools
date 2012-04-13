@@ -41,11 +41,5 @@ power line. Use a power source of 5V but never a 3.3V or you can fry the pin.
 
 Resources
 =========
-* `GigaMegaBlog`_
-* `Google Groups`_
-
-
-
-.. _GigaMegaBlog http://www.gigamegablog.com/2012/03/16/beaglebone-coding-101-buttons-and-pwm/
-.. _Google Groups https://groups.google.com/d/msg/beagleboard/alKf67dwMHI/b9W2igN6Lr4J
-
+[GigaMegaBlog](http://www.gigamegablog.com/2012/03/16/beaglebone-coding-101-buttons-and-pwm/)
+[Google Groups](https://groups.google.com/d/msg/beagleboard/alKf67dwMHI/b9W2igN6Lr4J)
