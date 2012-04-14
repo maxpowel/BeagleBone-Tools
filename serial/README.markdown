@@ -13,7 +13,7 @@ In beagle bone we can use four serial ports:
 * /dev/ttyO4
 * /dev/ttyO5
 
-/dev/ttyO3 is on in the PCB layout
+/dev/ttyO3 is not in the PCB layout
 
 But before use it we should set the right MUX settings. This task is what this library does.
 
