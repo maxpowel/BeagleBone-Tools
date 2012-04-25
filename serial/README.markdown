@@ -16,11 +16,15 @@ In beagle bone we can use four serial ports:
 /dev/ttyO3 is not in the PCB layout
 
 But before use it we should set the right MUX settings. This task is what this library does.
-
   
 How to use
 ===========
 Please read the example.py file to view a full working example
+
+Note
+===========
+This scripts has been tested on Angstrom, Ubuntu and Debian. In Debian you should
+mount the debugfs with the following command: mount -t debugfs none /sys/kernel/debug
 
 Warning
 ===========
