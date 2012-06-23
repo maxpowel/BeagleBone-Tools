@@ -9,7 +9,7 @@ Methods
 Implemented methods are the same that arduino library
 
 * **attach(pin)**
-  The pin number is a string according to beaglebone users. At the moment there are only two PWD pins available: P9_14 and P9_16
+  The pin number is a string according to beaglebone users. 		The pin number is a string according to beaglebone users. Up to 8 PWM are avaiable: P8_13, P8_19, P9_14, P9_16, P9_29, P9_31, P9_42, P9_48
 
 * **write(angle)**
   Angle of ration in degrees (from 0 to 180). This angle is converted to microseconds according to the standard but you can change it easily to
@@ -27,7 +27,7 @@ Implemented methods are the same that arduino library
   Get if the servo is attached to some pin
 
 * **detach**
-  Free the pin (in beablebone its not required to free the pin)
+  Free the pin
   
 
 Note

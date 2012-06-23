@@ -9,7 +9,7 @@ Methods
 Implemented methods are the same that arduino library
 
 * **attach(pin)**
-  The pin number is a string according to beaglebone users. At the moment there are only two PWD pins available: P9_14 and P9_16
+  The pin number is a string according to beaglebone users. Up to 8 PWM are avaiable: P8_13, P8_19, P9_14, P9_16, P9_29, P9_31, P9_42, P9_48
 
 * **write(percent)**
   Percent of the duty, from 0 to 100
@@ -18,7 +18,7 @@ Implemented methods are the same that arduino library
   Pulse width in microseconds. Use this method if you need more precission
   
 * **detach(pin)**
-  Turn off the PWM pin
+  Free the PWM pin
 
 Note
 ===========
