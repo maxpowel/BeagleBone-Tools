@@ -8,6 +8,7 @@ Tools provided
 =========
 
 * **servo** Control servos using PWM pins
+* **esc** Use ESC to control brushless motors
 * **serial** Enable serial ports
 * **gpio** GPIO control
 
