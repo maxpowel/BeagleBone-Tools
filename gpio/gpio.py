@@ -109,21 +109,31 @@ bone_pins = { "P8_1": { "name": "DGND" },
 GPIO_DIR = "/sys/class/gpio"
 OMAP_MUX_DIR = "/sys/kernel/debug/omap_mux"
 ############
-HIGH = "high"
-LOW = "low"
+HIGH = "1"
+LOW = "0"
 
 INPUT = "in"
 OUTPUT = "out"
 def pinMode(pin, mode):
 	pinNumber = str(bone_pins[pin]["gpio"])
-	if not os.path.exists(GPIO_DIR + "/gpio" + pinNumber):
-		open(GPIO_DIR + "/export", 'w').write(pinNumber)
+	
+	if mode == "in":
+		open(OMAP_MUX_DIR + "/"+ bone_pins[pin]["mux"], 'w').write("27")
+	else:
 		open(OMAP_MUX_DIR + "/"+ bone_pins[pin]["mux"], 'w').write("7")
+		
+	if not os.path.exists(GPIO_DIR + "/gpio" + pinNumber):
+		open(GPIO_DIR + "/export", 'w').write(pinNumber)		
 	
 	if mode in (INPUT, OUTPUT):
 		open(GPIO_DIR + "/gpio"+pinNumber+"/direction", 'w').write(mode)
 		
-	
+def activeLow(value):
+	if value:
+		open(GPIO_DIR + "/active_low", 'w').write("1")
+	else:
+		open(GPIO_DIR + "/active_low", 'w').write("0")
+		
 
 def freePin(pin):
 	pinNumber = str(bone_pins[pin]["gpio"])
@@ -134,8 +144,12 @@ def digitalWrite(pin, value):
 	pinNumber = str(bone_pins[pin]["gpio"])
 	if os.path.exists(GPIO_DIR + "/gpio" + pinNumber):
 		if value in (HIGH, LOW):
-			open(GPIO_DIR + "/gpio"+pinNumber+"/direction", 'w').write(value)
+			open(GPIO_DIR + "/gpio"+pinNumber+"/value", 'w').write(value)
 			
-
+def digitalRead(pin):
+	pinNumber = str(bone_pins[pin]["gpio"])
+	if os.path.exists(GPIO_DIR + "/gpio" + pinNumber):
+			return open(GPIO_DIR + "/gpio"+pinNumber+"/value", 'r').read()
+			
 
 
